@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+## System Requirements
+This setup assumes that the machine has mongodb, nodejs installed.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To install the mongodb use this link [https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/]
+To install the nodejs use this link [https://nodejs.org/en/download]
 
+To run the app, please make sure these ports are available to use. The app uses port 3000 for the client and port 5000 for the server.
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, there are two parts: Client(ReactJS App) and server(NodeJS and MongoDB for the Database)
 
-### `npm start`
+To run this project, follow the following steps:
+
+To run the server, use these following commands
+
+### cd server
+### npm install
+### npm start
+
+To run the client, use these following commands
+
+### cd client
+### npm install
+### npm start
+
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The server will use port 5000 to run.
 
-### `npm test`
+## Technologies Used
+ReactJS
+Material UI
+NodeJS
+Express
+MongoDB
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Notes
+The frontend validates the input using the validator package. Currently it only supports HTTP, HTTPS, FTP for the scheme. This can be extended to validate URI also.
 
-### `npm run build`
+The backend has been intentionally kept simple. Currently it generates a random short string for each URL and saves the mapping to mongodb. It takes care of de-duplication by querying DB.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Following things will help to make this a production ready software.
+1. Adding caching on the backend(eg. Redis)
+2. Adding analytics
+3. Allowing users to choose custom short URL
