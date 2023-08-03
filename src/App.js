@@ -36,6 +36,7 @@ function App() {
 
   const handleClear = () => {
     setUrl('')
+    setShortUrl('')
   }
   return (
     <Grid container
@@ -60,7 +61,7 @@ function App() {
 
           <Grid container spacing={2} justifyContent="center">
             <Grid item>
-              <Button variant="contained" color="primary" type="submit" disabled={!isValidUrl}>
+              <Button variant="contained" color="primary" type="submit" disabled={!isValidUrl || !url}>
                 Submit
               </Button>
             </Grid>
